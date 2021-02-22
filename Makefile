@@ -1,11 +1,12 @@
 filename=dfg
+compiler=pdflatex
 
 all: dfg.pdf clean
 dfg.pdf:
-	pdflatex ${filename}.tex
+	${compiler} ${filename}.tex
 	biber ${filename}
-	pdflatex ${filename}.tex
-	pdflatex ${filename}.tex
+	${compiler} ${filename}.tex
+	${compiler} ${filename}.tex
 clean:
 	-rm ${filename}.log
 	-rm ${filename}.aux

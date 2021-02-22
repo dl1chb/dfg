@@ -105,3 +105,44 @@
 \newcommand{\todonote}[2][]{\tikzexternaldisable\todo[#1]{#2}\tikzexternalenable} %needed for externalization
 \usepackage{showlabels}
 }
+
+% color definition of the "DFG-Blue"
+\definecolor{dfgblue}{RGB}{0, 77, 162}
+
+% Header included
+
+\usepackage{lipsum}
+\usepackage[pdftex, colorlinks=true, linkcolor=MidnightBlue, citecolor=MidnightBlue, urlcolor=MidnightBlue, pdfauthor={Dr.\ Martin Hoelzer}, pdfpagelayout=SinglePage, bookmarks, bookmarksopen]{hyperref}
+
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage{relsize}
+
+%\usepackage{titlesec}
+%\usepackage{placeins}
+
+\usepackage[font=small,labelfont={bf,it},textfont=it]{caption}
+\captionsetup{format=plain}
+
+\graphicspath{{figures/}}
+\addbibresource{literature.bib}
+% use \addbibresource again to add multiple bib files
+\AtBeginBibliography{\small}
+
+% command \todo now deprecated by using todonotes
+%\newcommand{\todo}[1]{\xspace{\textcolor{red}{\bfseries[TODO: #1]}}\xspace}
+\newcommand{\cp}[1]{\xspace{\textcolor{blue}{\bfseries[COPIED: #1]}}\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Declare your Bibliography
+\DeclareBibliographyCategory{reviewed}
+\DeclareBibliographyCategory{nonreviewed}
+\DeclareBibliographyCategory{patents_pending}
+\DeclareBibliographyCategory{patents}
+%
+
+\input{highlight_box.tex}
